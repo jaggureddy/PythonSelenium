@@ -8,3 +8,12 @@ def test_Test2():
 # py.test -v -s
 # py.test -m first -v -s
 # py.test -k first  -v -s
+
+
+@pytest.fixture()
+def setup():
+    print('Executed first')
+
+
+def test_fixtureDemo(setup):
+    print('Executed Next')

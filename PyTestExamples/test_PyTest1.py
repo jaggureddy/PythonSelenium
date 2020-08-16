@@ -11,3 +11,12 @@ def test_first():
 @pytest.mark.second
 def test_second():
     print('S2')
+
+
+@pytest.mark.xfail
+def test_second1():
+    print('S2')
+
+
+def test_crossBrowser(crossBrowser):
+    print(crossBrowser)
