@@ -8,7 +8,7 @@ def test_Test2():
 # py.test -v -s
 # py.test -m first -v -s
 # py.test -k first  -v -s
-
+# --html=report.html
 
 @pytest.fixture()
 def setup():
