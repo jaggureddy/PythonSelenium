@@ -1,11 +1,17 @@
 import pytest
+from selenium import webdriver
 
 
 @pytest.fixture(scope='class')
-def setup():
-    print('Executed first')
+def setup(request):
+    chromeOptions = webdriver.ChromeOptions()
+    chromeOptions.add_argument("--start-maximized")
+    driver = webdriver.Chrome(executable_path='C:\\Users\\JagguMiniPC\\PycharmProjects\\PythonSelenium\\Executables\\chromedriver.exe', options=chromeOptions)
+    driver.implicitly_wait(10)
+    driver.get("https://rahulshettyacademy.com/angularpractice/")
+    request.cls.driver = driver
     yield
-    print('Executed Last')
+    driver.close()
 
 
 @pytest.fixture()

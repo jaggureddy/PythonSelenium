@@ -1,6 +1,8 @@
 import logging
+import pytest
 
 
+@pytest.mark.usefixtures('setup')
 class BaseClass:
 
     def GetLogger(self):
